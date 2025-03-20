@@ -1,0 +1,26 @@
+<app-display-prod (displayIcons)="fndisplayNew($event)"></app-display-prod>
+
+<hr>
+
+<div style ="width: 80%; margin:0 auto">
+  <div class="row">
+  @for(p of products; track p){
+
+  <div class="card mb-3" [ngClass]="{'col-md-3' : !vista, 'col-md-12' : vista}">
+
+    <img [src]="p.img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <p class="card-text">{{p.description}}</p>
+      <div class="lineaCart">
+      <p class="card-text"><small class="text-primary">{{p.price | currency}}</small></p>
+      <button type="button" class="btn btn-primary boton">Agregar al carrito</button>
+    </div>
+    </div>
+  </div>
+  }
+ </div>
+</div>
+
+<app-footer class="footer"></app-footer>
+
